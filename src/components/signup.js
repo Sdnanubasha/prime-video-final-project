@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import { useForm } from "react-hook-form";
-
+import swal from 'sweetalert';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -31,6 +31,7 @@ const Signup = () => {
     console.warn(result);
     localStorage.setItem("user",JSON.stringify(result));
     if(result){
+        swal("Successfully Registered",`Welcome to prime video ${result.name}`,"success")
         navigate('/');
     }
   }

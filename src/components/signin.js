@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import { useForm} from "react-hook-form";
-
+import swal from 'sweetalert';
 
 
 const Signin = () => {
@@ -30,9 +30,10 @@ const Signin = () => {
     console.warn(result);
     if(result.name){
       localStorage.setItem('user',JSON.stringify(result));
+      swal("Login successfully","credentials are matched","success");
       navigate('/');
     }else{
-      alert('credentials are wrong !!')
+      swal("Login failed","credentials are not matched","error");
     }
   }
 

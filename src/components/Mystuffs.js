@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import {Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
-import Carousel from 'better-react-carousel'
+import Carousel from 'better-react-carousel';
+import swal from 'sweetalert';
 
 const MyStuffs =()=> {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-originals/${a_o_id}`);
       if(result) {
-        alert(`${title} successfully deleted`)
+        swal(`${title} successfully deleted!`,"","success")
         navigate('/')
       }
   console.log(result);
@@ -45,7 +46,7 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-tvs/${t_id}`);
       if(result) {
-        alert(`${title} successfully deleted`)
+        swal(`${title} successfully deleted!`,"","success")
         navigate('/')
       }
   console.log(result);
@@ -58,7 +59,7 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-movies/${m_id}`);
       if(result) {
-        alert(`${title} successfully deleted`)
+        swal(`${title} successfully deleted!`,"","success")
         navigate('/')      }
   console.log(result);
     } catch (error) {
@@ -70,7 +71,7 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-kids/${k_id}`);
       if(result) {
-        alert(`${title} successfully deleted`)
+        swal(`${title} successfully deleted!`,"","success")
         navigate('/')      }
   console.log(result);
     } catch (error) {
@@ -82,7 +83,7 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-animes/${a_id}`);
       if(result) {
-        alert(`${title} successfully deleted`)
+        swal(`${title} successfully deleted!`,"","success")
         navigate('/')      }
   console.log(result);
     } catch (error) {
@@ -103,7 +104,6 @@ const MyStuffs =()=> {
       <Carousel className='carousel'cols={4} rows={1} gap={10} loop>
       {mystufforiginals.map(post =>(
       <Carousel.Item className='carousel-item'>
-        
           <div className="container2">
             <div className="card" key={post._id}>
             <Link to={`/original-details/${post.a_o_id}`} key={post._id} style={{ "textDecoration": "none" }}>
@@ -125,7 +125,6 @@ const MyStuffs =()=> {
               </ul>
             </div>
           </div>
-          
       </Carousel.Item>
       ))}
       <Carousel.Item>
