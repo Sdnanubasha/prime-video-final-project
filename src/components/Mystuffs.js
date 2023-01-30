@@ -2,7 +2,9 @@ import React,{useState,useEffect} from 'react';
 import {Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Carousel from 'better-react-carousel';
-import swal from 'sweetalert';
+//import swal from 'sweetalert';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyStuffs =()=> {
   const navigate = useNavigate();
@@ -33,7 +35,18 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-originals/${a_o_id}`);
       if(result) {
-        swal(`${title}`,"successfully deleted!","success")
+        // window.location.reload(false);
+        toast.success(`${title} removed successfully!!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+        // swal(`${title}`,"successfully deleted!","success")
         navigate('/')
       }
   console.log(result);
@@ -46,8 +59,16 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-tvs/${t_id}`);
       if(result) {
-        swal(`${title}`,"successfully deleted!","success")
-        navigate('/')
+        toast.success(`${title} removed successfully!!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });        navigate('/')
       }
   console.log(result);
     } catch (error) {
@@ -59,8 +80,16 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-movies/${m_id}`);
       if(result) {
-        swal(`${title}`,"successfully deleted!","success")
-        navigate('/')
+        toast.success(`${title} removed successfully!!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });        navigate('/')
       }
   console.log(result);
     } catch (error) {
@@ -72,8 +101,16 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-kids/${k_id}`);
       if(result) {
-        swal(`${title}`,"successfully deleted!","success")
-        navigate('/')
+        toast.success(`${title} removed successfully!!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });        navigate('/')
       }
   console.log(result);
     } catch (error) {
@@ -85,8 +122,16 @@ const MyStuffs =()=> {
     try {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-animes/${a_id}`);
       if(result) {
-        swal(`${title}`,"successfully deleted!","success")
-        navigate('/')
+        toast.success(`${title} removed successfully!!`, {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });        navigate('/')
       }
   console.log(result);
     } catch (error) {
