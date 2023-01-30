@@ -33,7 +33,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-originals/${a_o_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.navigate('/src/components/Mystuffs.js');
+        navigate('/')
       }
   console.log(result);
     } catch (error) {
@@ -46,7 +46,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-tvs/${t_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.reload(false);
+        navigate('/')
       }
   console.log(result);
     } catch (error) {
@@ -59,8 +59,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-movies/${m_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.reload(false);
-      }
+        navigate('/')      }
   console.log(result);
     } catch (error) {
       console.log(error);
@@ -72,8 +71,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-kids/${k_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.reload(false);
-      }
+        navigate('/')      }
   console.log(result);
     } catch (error) {
       console.log(error);
@@ -85,8 +83,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-animes/${a_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.reload(false);
-      }
+        navigate('/')      }
   console.log(result);
     } catch (error) {
       console.log(error);
