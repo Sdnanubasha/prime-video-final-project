@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import { useParams ,Link} from "react-router-dom";
+import  swal from "sweetalert";
+
 
 const MovieDetail = () => {
     // const navigate = useNavigate();
@@ -14,7 +16,7 @@ const MovieDetail = () => {
         try {
           let result = await movie.map(post =>( axios.post(`https://prime-video-api.onrender.com/mystuff-originals?id=${post.a_o_id}`)))
           if(result) {
-            movie.map (post => alert(`${post.title} successfully added to mystuff`))
+            movie.map (post => swal(`${post.title}`,"successfully added to mystuff","success"))
           }
       console.log(result);
         } catch (error) {
