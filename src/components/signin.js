@@ -30,7 +30,7 @@ const Signin = () => {
     console.warn(result);
     if(result.name){
       localStorage.setItem('user',JSON.stringify(result));
-      swal("Login successfully","credentials are matched","success");
+      swal("Login successfully",`Welcome Back to Prime Video ${result.name}`,"success");
       navigate('/');
     }else{
       swal("Login failed","credentials are not matched","error");
