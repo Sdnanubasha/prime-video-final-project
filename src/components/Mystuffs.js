@@ -1,14 +1,15 @@
 import React,{useState,useEffect} from 'react';
-import {Link} from "react-router-dom";
+import {Link , useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Carousel from 'better-react-carousel'
 
 const MyStuffs =()=> {
-        const [mystufforiginals, setMystuffOriginals] = useState([]);
-        const [mystufftvs, setMystuffTvs] = useState([]);
-        const [mystuffanimes, setMystuffAnimes] = useState([]);
-        const [mystuffmovies, setMystuffMovies] = useState([]);
-        const [mystuffkids, setMystuffKids] = useState([]);
+  const navigate = useNavigate();
+  const [mystufforiginals, setMystuffOriginals] = useState([]);
+  const [mystufftvs, setMystuffTvs] = useState([]);
+  const [mystuffanimes, setMystuffAnimes] = useState([]);
+  const [mystuffmovies, setMystuffMovies] = useState([]);
+  const [mystuffkids, setMystuffKids] = useState([]);
 
   const getMovies = async () => {
     try {
@@ -32,7 +33,7 @@ const MyStuffs =()=> {
       let result = await  axios.delete(`https://prime-video-api.onrender.com/mystuff-originals/${a_o_id}`);
       if(result) {
         alert(`${title} successfully deleted`)
-        window.location.reload(false);
+        window.location.navigate('/src/components/Mystuffs.js');
       }
   console.log(result);
     } catch (error) {
