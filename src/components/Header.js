@@ -112,7 +112,7 @@ const Header = (props) => {
                 <></>}
               </ul>
               <ul className="nav navbar-nav navbar-right">
-              <li><Link to="#" id="location" onClick={geolocation()}><span class="glyphicon glyphicon-map-marker"></span>Location
+              <li><Link to="#" id="location" onClick={()=>geolocation()}><span class="glyphicon glyphicon-map-marker"></span>Location
               
               </Link></li> 
               <li><Link to="#"><p id="weather"></p></Link>
