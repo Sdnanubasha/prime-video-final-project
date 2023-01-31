@@ -84,12 +84,12 @@ const Header = (props) => {
             <ul className="nav navbar-nav navbar-left">
               <li>
                 <Link to="#" id="darklight" onClick={() => darkmode()}>
-                  <span className="glyphicon glyphicon-adjust">Mode</span>
+                  <span className="glyphicon glyphicon-adjust"></span> Mode
                 </Link>
               </li>
               <li>
                 <Link to="/">
-                  <span className="glyphicon glyphicon-home"></span>Home
+                  <span className="glyphicon glyphicon-home"></span> Home
                 </Link>
               </li>
               {auth ? (
